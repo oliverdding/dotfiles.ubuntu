@@ -61,7 +61,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt -y --no-install-recommends install docker-ce docker-ce-cli containerd.io
 sudo apt -y --no-install-recommends install dash openssl libssl-dev neovim git bash-completion fzf hexyl
-sudo apt -y --no-install-recommends install gcc-10 g++-10 python3 python3-dev python3-pip python3-setuptools python3-wheel golang 
+sudo apt -y --no-install-recommends install cmake ninja-build gcc-10 g++-10 python3 python3-dev python3-pip python3-setuptools python3-wheel golang 
 sudo apt -y autoremove
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 50
