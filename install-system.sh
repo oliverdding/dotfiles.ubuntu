@@ -49,9 +49,12 @@ link() {
 
 sudo apt-get -y update
 
-sudo apt -y --no-install-recommends install gnupg2 apt-transport-https ca-certificates curl zip unzip tar locales lsb-release
+sudo apt -y --no-install-recommends install gnupg2 apt-transport-https software-properties-common ca-certificates curl zip unzip tar locales lsb-release
 sudo locale-gen en_US.UTF-8 
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo add-apt-repository ppa:longsleep/golang-backports
 
 copy "etc/apt/sources.list.d/docker.list"
 #copy "etc/apt/sources.list.d/kubernetes.list"
@@ -73,7 +76,7 @@ done
 sudo apt-get -y update
 sudo apt -y --no-install-recommends install docker-ce docker-ce-cli containerd.io
 sudo apt -y --no-install-recommends install dash openssl libssl-dev neovim ripgrep git bash-completion zoxide fzf exa hexyl
-sudo apt -y --no-install-recommends install gcc-10 g++-10 python3 python3-dev python3-pip python3-setuptools python3-wheel
+sudo apt -y --no-install-recommends install gcc-10 g++-10 python3 python3-dev python3-pip python3-setuptools python3-wheel golang 
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 50
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 50
