@@ -31,6 +31,22 @@ copy() {
     echo "$dest_file <= $orig_file"
 }
 
+link() {
+    orig_file="$dotfiles_dir/$1"
+    if [ -n "$2" ]; then
+        dest_file="$HOME/$2"
+    else
+        dest_file="$HOME/$1"
+    fi
+
+    mkdir -p "$(dirname "$orig_file")"
+    mkdir -p "$(dirname "$dest_file")"
+
+    rm -rf "$dest_file"
+    ln -s "$orig_file" "$dest_file"
+    echo "$dest_file -> $orig_file"
+}
+
 sudo apt-get -y update
 
 sudo apt -y --no-install-recommends install gnupg2 apt-transport-https ca-certificates curl zip unzip tar locales lsb-release
@@ -67,6 +83,8 @@ sudo update-alternatives --set cc /usr/bin/gcc
 
 sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 100
 sudo update-alternatives --set c++ /usr/bin/g++
+
+link ".local/share/cargo/config"
 
 export RUSTUP_HOME=~/.local/share/rustup
 export CARGO_HOME=~/.local/share/cargo

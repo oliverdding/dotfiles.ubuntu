@@ -58,7 +58,7 @@ echo "##########################"
 echo "linking user's dotfiles..."
 echo "##########################"
 
-link ".bash_profile"
+link ".profile"
 link ".bashrc"
 
 link ".config/bottom"
