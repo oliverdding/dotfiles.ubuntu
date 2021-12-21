@@ -64,6 +64,9 @@ sudo apt -y --no-install-recommends install dash openssl libssl-dev neovim git b
 sudo apt -y --no-install-recommends install cmake ninja-build gcc-10 g++-10 python3 python3-dev python3-pip python3-setuptools python3-wheel golang 
 sudo apt -y autoremove
 
+sudo curl -fsSL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -o /usr/libexec/docker/cli-plugins/docker-compose
+sudo chmod +x /usr/libexec/docker/cli-plugins/docker-compose
+
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 50
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 50
 
